@@ -1,0 +1,347 @@
+Love where you’re taking this — turning it into a proper system 💼🔥
+Let’s make this clean, practical, and something you can actually show your company.
+
+---
+
+# 📄 PRODUCT REQUIREMENTS DOCUMENT (PRD)
+
+## 🧾 Product Name
+
+**Procurement Intelligence & Supplier Discovery System**
+
+---
+
+## 🎯 Objective
+
+Automate the process of:
+
+* discovering suppliers
+* extracting contact details (email, phone, website)
+* storing structured vendor data
+* enabling faster RFQ (Request for Quotation)
+
+---
+
+## 👥 Target Users
+
+* Purchase / Procurement Team
+* Operations Team
+* Founders / Decision Makers
+
+---
+
+## 🚨 Problem Statement
+
+Current process:
+
+* Manual Google search
+* Manual vendor discovery
+* Manual email collection
+* Time-consuming & inconsistent
+
+👉 Result:
+
+* missed suppliers
+* slow sourcing
+* inefficient procurement
+
+---
+
+## 💡 Solution Overview
+
+A system that:
+
+1. Takes input:
+
+   * Material (e.g. PET Film)
+   * Country (e.g. Vietnam)
+
+2. Automatically:
+
+   * finds suppliers
+   * extracts emails & contact info
+   * stores data in structured format
+
+3. Outputs:
+
+   * ready-to-contact supplier list
+
+---
+
+## 🧱 Core Features (MVP)
+
+### 1. Input System
+
+* Material
+* Country
+* Request ID
+
+---
+
+### 2. Query Generator
+
+* Generates multiple search queries:
+
+  * supplier
+  * manufacturer
+  * exporter
+  * distributor
+
+---
+
+### 3. Supplier Discovery Engine
+
+* Uses SerpAPI / Google Search
+* Extracts:
+
+  * supplier name
+  * website
+
+---
+
+### 4. Contact Extraction Engine
+
+* Second search:
+
+  * “supplier_name + email”
+* Extract:
+
+  * email
+  * phone (optional)
+
+---
+
+### 5. Data Cleaning
+
+* Remove duplicates
+* Validate emails
+* Filter junk results
+
+---
+
+### 6. Data Storage
+
+* Google Sheets / Database
+* Fields:
+
+| Field         | Description    |
+| ------------- | -------------- |
+| Request ID    | Unique request |
+| Material      | Raw material   |
+| Country       | Source country |
+| Supplier Name | Company        |
+| Website       | URL            |
+| Email         | Contact        |
+| Phone         | Optional       |
+| Source        | SerpAPI        |
+| Status        | New            |
+
+---
+
+### 7. Output
+
+* Clean supplier list
+* Ready for outreach
+
+---
+
+## 🔥 Future Features (V2)
+
+* 📧 Auto RFQ email sending
+* 🧠 Supplier ranking (AI-based)
+* 🌍 Country comparison
+* 📊 Dashboard
+* 🔎 Website scraping for hidden emails
+
+---
+
+# ⚙️ IMPLEMENTATION PLAN (PYTHON)
+
+---
+
+## 🏗️ Architecture
+
+```text
+User Input → Python Engine → APIs → Processing → Storage → Output
+```
+
+---
+
+## 🧩 Tech Stack
+
+| Layer      | Tech                |
+| ---------- | ------------------- |
+| Backend    | Python              |
+| API        | SerpAPI             |
+| Data       | Pandas              |
+| Storage    | Google Sheets / CSV |
+| Automation | Cron / n8n trigger  |
+| Email      | SMTP / Gmail API    |
+
+---
+
+## 📁 Project Structure
+
+```text
+project/
+│
+├── main.py
+├── config.py
+├── queries.py
+├── serpapi.py
+├── extractor.py
+├── cleaner.py
+├── storage.py
+└── utils.py
+```
+
+---
+
+## 🪜 Step-by-Step Implementation
+
+---
+
+### 🔹 Step 1: Input Module
+
+* Accept:
+
+  * material
+  * country
+  * request_id
+
+---
+
+### 🔹 Step 2: Query Generator
+
+* Generate 5–10 queries per request
+
+---
+
+### 🔹 Step 3: Supplier Search
+
+* Call SerpAPI
+* Extract:
+
+  * title → supplier name
+  * link → website
+
+---
+
+### 🔹 Step 4: Email Search
+
+* For each supplier:
+
+  * search: `"supplier_name email"`
+
+---
+
+### 🔹 Step 5: Email Extraction
+
+* Regex-based extraction
+* From:
+
+  * title
+  * snippet
+
+---
+
+### 🔹 Step 6: Data Cleaning
+
+* Remove duplicates
+* Remove invalid emails
+* Prioritize domain-matching emails
+
+---
+
+### 🔹 Step 7: Storage
+
+Option A:
+
+* CSV (simple)
+
+Option B:
+
+* Google Sheets API (better)
+
+---
+
+### 🔹 Step 8: Logging
+
+* Store:
+
+  * request logs
+  * failed searches
+  * errors
+
+---
+
+## 🚀 Phase-wise Plan
+
+---
+
+### 🟢 Phase 1 (2–3 days)
+
+* Basic Python script
+* Supplier + email extraction
+* Save CSV
+
+---
+
+### 🟡 Phase 2 (3–5 days)
+
+* Google Sheets integration
+* Deduplication
+* Better extraction
+
+---
+
+### 🔵 Phase 3 (5–7 days)
+
+* Website scraping
+* Phone extraction
+* Error handling
+
+---
+
+### 🔴 Phase 4 (Advanced)
+
+* Auto email sending
+* Dashboard
+* AI ranking
+
+---
+
+# 📊 SUCCESS METRICS
+
+* ⏱ Time saved per sourcing task
+* 📧 Emails found per supplier
+* 📈 Number of suppliers discovered
+* 💰 Cost reduction in sourcing
+
+---
+
+# 🧠 REAL TALK
+
+What you’re building is NOT just automation.
+
+👉 This is:
+
+* procurement intelligence
+* lead generation system
+* scalable sourcing engine
+
+---
+
+# 🎯 Next Move
+
+If you want, I’ll help you:
+
+👉 turn this into:
+
+* clean GitHub project
+* resume project
+* internship presentation
+
+Just say:
+
+👉 **“make it resume ready”** 💼🔥
